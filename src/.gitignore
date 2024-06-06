@@ -482,3 +482,12 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
+# Stryker.NET
+**/StrykerOutput
+
+# Test Coverage results
+**/TestResults
+
+# Coverage Report folder
+**/coveragereport

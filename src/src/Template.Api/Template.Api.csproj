@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>true</InvariantGlobalization>
+    
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,5 +18,10 @@
     <ProjectReference Include="..\Template.Infrastructure.Db\Template.Infrastructure.Db.csproj" />
     <ProjectReference Include="..\Template.Infrastructure.Messaging\Template.Infrastructure.Messaging.csproj" />
   </ItemGroup>
+
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
 
 </Project>

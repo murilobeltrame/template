@@ -1,4 +1,5 @@
 using System.IO.Compression;
+using System.Reflection;
 
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Versioning.Conventions;
@@ -35,7 +36,11 @@ builder.Services
         options.SubstituteApiVersionInUrl = true;
         options.AssumeDefaultVersionWhenUnspecified = true;
     });
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFile));
+});
 
 builder.Services.AddHealthChecks();
 

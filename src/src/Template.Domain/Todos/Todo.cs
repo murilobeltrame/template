@@ -1,3 +1,5 @@
+using Ardalis.GuardClauses;
+
 namespace Template.Domain.Todos;
 
 public class Todo
@@ -8,12 +10,14 @@ public class Todo
     public DateTime? DueDate { get; private set; }
     public DateTime? FinishedAt { get; private set; }
 
-    public Todo(string title, string description, DateTime? dueDate)
+    public Todo(string title, string description, DateTime? dueDate = null)
     {
-        Title = title; 
-        Description = description; 
+        Title = Guard.Against.NullOrWhiteSpace(title); 
+        Description = Guard.Against.NullOrWhiteSpace(description); 
         DueDate = dueDate;
     }
 
-    private Todo() {}
+#pragma warning disable CS8618 // Required by EF.
+    private Todo() { }
+#pragma warning restore CS8618 // Required by EF.
 }

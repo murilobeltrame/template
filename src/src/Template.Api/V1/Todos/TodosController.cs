@@ -57,6 +57,13 @@ public class TodosController(IMediator mediator) : ControllerBase {
         return NoContent();
     }
 
+    /// <summary>
+    /// Deletes a Todo item.
+    /// </summary>
+    /// <param name="id">The Todo identification</param>
+    /// <returns>Nothing</returns>
+    /// <response code="204">Returns nothing as success.</response>
+    /// <response code="404">If Todo item couldn`t be found.</response>
     [HttpDelete("{id:int}")]
     [ProducesResponseType((int)HttpStatusCode.NoContent)]
     [ProducesResponseType<ProblemDetails>((int)HttpStatusCode.BadRequest)]
