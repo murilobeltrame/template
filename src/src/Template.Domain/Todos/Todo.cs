@@ -1,10 +1,11 @@
 using Ardalis.GuardClauses;
 
+using Template.Domain.Shared.Abstractions;
+
 namespace Template.Domain.Todos;
 
-public class Todo
+public class Todo : Entity
 {
-    public int Id { get; private set; }
     public string Title { get; private set; }
     public string Description { get; private set; }
     public DateTime? DueDate { get; private set; }

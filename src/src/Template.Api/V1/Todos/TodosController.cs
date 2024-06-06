@@ -28,8 +28,7 @@ public class TodosController(IMediator mediator) : ControllerBase {
     [ProducesResponseType<ProblemDetails>((int)HttpStatusCode.BadRequest)]
     [ProducesResponseType<ProblemDetails>((int)HttpStatusCode.NotFound)]
     public async Task<IActionResult> Get(int id) {
-        var result = await _mediator.Send(new GetTodoByIdQuery(id));
-        return result != null ? Ok() : NotFound();
+        return Ok(await _mediator.Send(new GetTodoByIdQuery(id)));
     }
 
     [HttpPost]
