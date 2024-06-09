@@ -5,7 +5,10 @@ using Template.Domain.Todos.Specifications;
 
 namespace Template.Application.TodoUsecases.Queries;
 
-public class FetchTodosQuery : IRequest<IEnumerable<Todo>>
+public class FetchTodosQuery(uint page, ushort size) : IRequest<IEnumerable<Todo>>
 {
-    internal FetchTodosSpecification ToSpecification() => new();
+    public ushort Size { get; set; } = size;
+    public uint Page { get; set; } = page;
+
+    public FetchTodosSpecification ToSpecification() => new(Page, Size);
 }

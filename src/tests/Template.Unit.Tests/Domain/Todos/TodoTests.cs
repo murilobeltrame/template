@@ -7,7 +7,7 @@ namespace Template.Unit.Tests.Domain.Todos;
 public class TodoTests
 {
     [Fact]
-    public void When_Instantiating_Todo_With_Valid_Args_Then_Should_Be_Instantiated()
+    public void When_Instantiating_With_Valid_Args_Then_Should_Be_Instantiated()
     {
         var title = "Some title";
         var description = "A little longer description than the title";

@@ -9,5 +9,5 @@ public class GetTodoByIdQuery(int id): IRequest<Todo>
 {
     public int Id { get; } = id;
 
-    internal GetTodoByIdSpecification ToSpecification() => new(Id);
+    public GetTodoByIdSpecification ToSpecification() => new(Id);
 }
