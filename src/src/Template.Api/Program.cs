@@ -59,7 +59,7 @@ app.UseAuthorization();
 app.MapControllers();
 app.MapHealthChecks("/healthz");
 
-app.Run();
+await app.RunAsync();
 
 //versioning
 //healthchecks
